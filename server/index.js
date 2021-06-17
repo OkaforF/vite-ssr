@@ -21,6 +21,9 @@ async function startServer() {
     app.use(viteDevServer.middlewares)
   }
 
+  // const posts =  require('./routes/api/posts.js')
+  // app.use('/api/posts', posts)
+
   const renderPage = createPageRender({ viteDevServer, isProduction, root })
   app.get('*', async (req, res, next) => {
     const url = req.originalUrl
